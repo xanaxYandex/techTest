@@ -1,0 +1,13 @@
+<input
+    class="input"
+    type="text"
+    id="field"
+    placeholder=" "
+    data-testid="input"
+    (blur)="onBlur()"
+    [ngModel]="value"
+    (ngModelChange)="value = $event">
+
+<label class="label"
+       data-testid="label"
+       for="field">{{label}}</label>

@@ -1,0 +1,17 @@
+:host {
+    display: block;
+    height: 100vh;
+}
+
+.app-container {
+    height: 100%;
+    display: flex;
+    padding: 100px calc(30vw - 90px);
+    overflow: hidden;
+
+    .content {
+        width: 100%;
+        background: rgba(white, 0.4);
+        box-shadow: 0 0 10px rgba(white, 0.4);
+    }
+}

@@ -1,0 +1,28 @@
+<div class="search-bar">
+    <app-custom-input
+        label="Search text"
+        data-testid="search-input"
+        [(ngModel)]="searchText"
+        (ngModelChange)="onSearchTextInput($event)"
+    ></app-custom-input>
+</div>
+
+<a class="add-todo-btn" [routerLink]="['/create']">
+    <button class="btn"><i class="fa fa-plus"></i></button>
+</a>
+
+
+<div class="todo-list" data-testid="list" *ngIf="(loading$ | async) === false; else loader">
+    <app-todo-item
+        class="todo-item"
+        *ngFor="let todo of todos$ | async"
+        [todo]="todo"
+        (selectTodo)="onSelectTodo($event)"
+        (deleteTodo)="onDeleteTodo($event)"
+        (doneStateChange)="onDoneStateChange($event)">
+    </app-todo-item>
+</div>
+
+<ng-template #loader>
+    <app-loader data-testid="loader"></app-loader>
+</ng-template>

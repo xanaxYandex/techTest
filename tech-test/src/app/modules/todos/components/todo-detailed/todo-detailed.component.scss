@@ -1,0 +1,19 @@
+:host {
+    display: grid;
+    grid-template-rows: auto min-content;
+    place-items: center;
+    grid-row-gap: 25px;
+}
+
+.todo-item-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.action-bar {
+    display: flex;
+    gap: 25px;
+}

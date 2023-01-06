@@ -1,0 +1,28 @@
+<h1>{{this.id ? 'Edit' : 'Create'}}</h1>
+
+<form class="todo-item-form" [formGroup]="form">
+    <app-custom-input
+        data-testid="label"
+        label="Label"
+        formControlName="label"></app-custom-input>
+    <app-custom-input
+        data-testid="description"
+        label="Description"
+        formControlName="description"></app-custom-input>
+    <app-custom-input
+        data-testid="category"
+        label="Category"
+        formControlName="category"></app-custom-input>
+</form>
+
+<div class="action-bar">
+    <a [routerLink]="['/list']">
+        <button class="btn outline">Cancel</button>
+    </a>
+    <button
+        class="btn"
+        data-testid="submit"
+        [disabled]="form.invalid"
+        (click)="onSubmit()">Submit
+    </button>
+</div>

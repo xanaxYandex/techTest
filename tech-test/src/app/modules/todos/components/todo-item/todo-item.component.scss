@@ -1,0 +1,82 @@
+:host {
+    display: block;
+}
+
+.todo {
+    display: grid;
+    grid-template-areas:
+    "l l l b"
+    "d d d s"
+    "d d d s"
+    "c c c t";
+
+    grid-row-gap: 20px;
+    grid-column-gap: 5px;
+
+    i {
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 24px;
+
+        &:hover {
+            color: var(--accent-color);
+        }
+    }
+
+    &__label {
+        transition: 0.2s color;
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: 500;
+        grid-area: l;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    &__description {
+        font-size: 20px;
+        font-weight: 300;
+        grid-area: d;
+    }
+
+    &__category {
+        display: flex;
+        font-size: 18px;
+        font-weight: 300;
+        grid-area: c;
+
+        .badge {
+            color: white;
+            padding: 5px 10px;
+            background: gray;
+            border-radius: 20px;
+        }
+    }
+
+    &__state {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        grid-area: s;
+    }
+
+    &__done-time {
+        display: flex;
+        align-items: flex-end;
+        justify-content: end;
+        grid-area: t;
+    }
+
+    &__delete-btn {
+        text-align: end;
+        grid-area: b;
+
+        i {
+            &:hover {
+                color: darkred;
+            }
+        }
+    }
+}

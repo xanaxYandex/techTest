@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/variables";
+
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--font-color);
+    background: linear-gradient(30deg, var(--accent-color), #9fbfda);
+}
+
+* {
+    font-family: 'Josefin Sans', 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+.btn {
+    display: flex;
+    transition: 0.2s;
+    cursor: pointer;
+    background: rgba(black, 0.4);
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 0;
+    color: white;
+    font-size: 24px;
+
+    &.outline {
+        background: transparent;
+        border: 1px solid rgba(black, 0.4);
+        color: var(--font-color);
+    }
+
+    &:hover {
+        color: black;
+        background: white;
+    }
+
+    &:disabled {
+        cursor: default;
+        pointer-events: none;
+        background: gray;
+    }
+}
+
+

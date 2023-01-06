@@ -1,0 +1,15 @@
+<div class="todo">
+    <div class="todo__label" data-testid="label" (click)="onSelect()">{{todo.label}}</div>
+    <div class="todo__description" data-testid="description">{{todo.description}}</div>
+    <div class="todo__category" data-testid="category">
+        <span class="badge">{{todo.category}}</span>
+    </div>
+    <div class="todo__state" data-testid="state" (click)="onDone()">
+        <i class="fa" [ngClass]="{'fa-check-circle': todo.done, 'fa-circle': !todo.done}"></i>
+    </div>
+    <div class="todo__delete-btn" data-testid="delete-btn" (click)="onDelete()">
+        <i class="fa fa-trash"></i>
+    </div>
+    <div class="todo__done-time" data-testid="done-time" *ngIf="todo.done">Done {{$any(todo.done) | date: 'mediumDate'}}</div>
+</div>
+
